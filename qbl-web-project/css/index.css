@@ -148,7 +148,7 @@ li a{
         position: absolute;
         top: 60px; /* Adjust based on your header size */
         right: 50px;
-        background-color: #000000;
+        background-color: #aaa;
         width: 200px;
         text-align: center;
         border-radius: 5px;
@@ -189,6 +189,7 @@ li a{
     font-style: normal;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Default shadow for a subtle border effect */
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+    margin-left: 15px;
 }
 
 
