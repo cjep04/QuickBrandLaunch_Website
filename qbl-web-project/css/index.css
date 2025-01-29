@@ -166,6 +166,12 @@ li a{
     .hamburger {
         display: flex; /* Show the hamburger menu on small screens */
     }
+
+     /* Add glow effect to the button by default on mobile version */
+     .menu_items .contact_btn {
+        box-shadow: 0 0 10px 3px rgba(255, 104, 46, 0.8); /* Glow effect by default */
+        background-color: #F16A2E;
+    }
 }
  
 
