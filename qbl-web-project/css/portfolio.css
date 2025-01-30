@@ -107,29 +107,28 @@ li a{
 }
 
 
-/* Stroke */
+/* stroke */
 .menu_items ul li a {
-  position: relative;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.menu_items ul li a::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%; /* Initially no stroke */
-  content: ''; /* No content, just for styling */
-  background: #aaa; /* Stroke color */
-  height: 1px; /* Stroke height */
-  transition: width 0.3s ease; /* Smooth transition on hover */
-}
-
-.menu_items ul li a:hover::after,
-.menu_items ul li a.active::after {
-  width: 100%; /* Stroke width becomes 100% on hover or when active */
-}
-
+    position: relative;
+    justify-content: space-between;
+    gap: 20px;
+    
+  }
+  
+  .menu_items ul li a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%; /* Initially no stroke */
+    content: ''; /* No content, just for styling */
+    background: #aaa; /* Stroke color */
+    height: 1px; /* Stroke height */
+    transition: width 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .menu_items ul li a:hover::after {
+    width: 100%; /* Stroke width becomes 100% on hover */
+  }
 /**Hamburger Menu*/
  .hamburger {
     display: none; /* Hide the hamburger menu on desktop */
@@ -268,4 +267,3 @@ li a{
     opacity: 1;
     box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7); /* Glow effect around the border */
 }
-
