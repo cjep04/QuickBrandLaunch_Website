@@ -40,13 +40,16 @@
   #root, #__next {
     isolation: isolate;
   }
-
+  
+  a{
+    text-decoration: none;
+  }
   /*
   Nav Section
   */
 
   header{
-    background-color: #000; /*Makes the background color black*/
+    background-color: #000000; /*Makes the background color black*/
     display: flex; /*This Creates a Flex box which displays content in a horizontal line*/
     justify-content: space-between; /* This creates an equal distance between each item within the flex box*/
     align-items: center; /*This centers all content on the y axis*/
@@ -58,22 +61,32 @@
   .logo{
     flex: 1; /* Make this item flexible and allow it to grow and fill the available space within the flex container.*/ 
     max-width: 50px; /*Sets initial size prior to flexing*/
-    
   }
 
+  @media screen and (max-width: 768px) {
+    .logo{
+        margin-top: 30px;
+    }
+}
+        
+    
+  
   nav {
     color: #fff; /*Sets the text color within the nav section to white*/
     display: flex; /*Alows the list items to flex and sets them in a horizontal line*/
     padding-bottom: 30px; /*Creates space inside of the element, between the content and the bottom edge */
-    padding-top: 30px; /*Creates space inside of the element, between the content and the top edge */
     align-items: center;
     justify-content: space-between;
-}
+  }
 
 li a{
     color: #fff;
     text-decoration: none;
+    padding-top: 30px;
 }
+
+
+
 
   .menu_items li{
     display: flex inline; /*Allows the menu items to flex and sets them in a ine horizonatlly*/
@@ -83,13 +96,23 @@ li a{
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
-    padding-right: 50px;
+    padding-right: 40px;
     color: #fff;
   }
+
+  li a {
+    color: #fff;
+    text-decoration: none;
+    padding-top: 30px;
+}
+
 
 /* stroke */
 .menu_items ul li a {
     position: relative;
+    justify-content: space-between;
+    gap: 20px;
+    
   }
   
   .menu_items ul li a::after {
@@ -106,14 +129,72 @@ li a{
   .menu_items ul li a:hover::after {
     width: 100%; /* Stroke width becomes 100% on hover */
   }
+/**Hamburger Menu*/
+ .hamburger {
+    display: none; /* Hide the hamburger menu on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    width: 30px;
+    height: 25px;
+    margin-top: 30px;
+}
 
-  button{
+.hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    
+}
+
+.menu_items.active {
+    display: block; /* Show the menu when the hamburger is clicked */
+}
+
+@media screen and (max-width: 768px) {
+    .menu_items {
+        display: none; /* Hide the menu by default on small screens */
+        position: absolute;
+        top: 60px; /* Adjust based on your header size */
+        right: 50px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 200px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
+        z-index: 9999; /* Ensure menu is above everything else, including the button */
+    }
+
+    .menu_items ul {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 15px;
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger menu on small screens */
+    }
+
+    /* Add glow effect to the button by default on mobile version */
+    .menu_items .contact_btn {
+        box-shadow: 0 0 10px 3px rgba(255, 104, 46, 0.8); /* Glow effect by default */
+        background-color: #F16A2E;
+        z-index: 10000; /* Ensure the button stays on top of the mobile menu */
+    }
+}
+ 
+
+   button{
     display: flex;
     align-self: center;
+    text-decoration: none;
   }
 
-  .contact_btn{
+  .contact_btn {
     padding: 15px 40px;
+    margin-top: 30px;
     border: none;
     outline: none;
     color: #ffffff;
@@ -121,15 +202,22 @@ li a{
     position: relative;
     z-index: 0;
     border-radius: 50px;
-    background: #1B1B1B;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     font-family: "polymath", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+    box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+    margin-left: 15px;
+    
+}
 
-  .contact_btn:hover{
+
+.contact_btn:hover {
     color: #fff;
-  }
+}
 
   .contact_btn::after{
     content: "";
@@ -142,6 +230,8 @@ li a{
     left: 0;
     top: 0;
     border-radius: 60px;
+    opacity: 0.3; /* Slight glow visible by default */
+
   }
 
   /*Glow Affect*/
