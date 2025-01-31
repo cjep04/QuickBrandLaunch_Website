@@ -5,13 +5,17 @@
   /* 2. Remove default margin */
   * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   body {
     /* 3. Add accessible line-height */
     line-height: 1.5;
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
-    background-color: #000;
+    background-color: #000000;
+    overflow: hidden;
+    
   }
   /* 5. Improve media defaults */
   img, picture, video, canvas, svg {
@@ -43,6 +47,10 @@
   
   a{
     text-decoration: none;
+  }
+
+  html{
+    font-size: 16px;
   }
   /*
   Nav Section
@@ -142,11 +150,12 @@ li a{
 }
 
 .hamburger .bar {
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
-    
+  width: 100%;
+  height: 4px;
+  background-color: #fff; /* Ensure the bars are white */
+  border-radius: 4px; /* Optional: Add rounded corners to the bars */
 }
+
 
 .menu_items.active {
     display: block; /* Show the menu when the hamburger is clicked */
@@ -171,7 +180,7 @@ li a{
     .menu_items ul {
         flex-direction: column;
         align-items: center;
-        margin-left: 15px;
+        margin-left: 40px;
     }
 
     .hamburger {
@@ -269,3 +278,167 @@ li a{
     box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7); /* Glow effect around the border */
 }
 
+/*Hero Section*/
+
+#hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: animateBg 50% linear infinite ;
+}
+@keyframes animateBg {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+span.star {
+  position: absolute; /* Use absolute position for accurate placement */
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 225, 0.1),
+              0 0 0 8px rgba(255, 255, 255, 0.1),
+              0 0 20px rgba(255, 255, 255, 1);
+  animation: animate 3s linear infinite;
+}
+
+span.star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(315deg) translateX(0); /* Starting point */
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px); /* Move forward to the right and slightly downward */
+    opacity: 0;
+  }
+}
+
+/* Specific positioning for each shooting star */
+span.star:nth-child(1) {
+  top: 0;
+  left: 5%; /* Use percentage to space it out more evenly */
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+
+span.star:nth-child(2) {
+  top: 0;
+  left: 20%; /* Adjust to move it further to the right */
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+
+span.star:nth-child(3) {
+  top: 20%;
+  left: 40%; /* Spread out more */
+  animation-delay: 0.4s;
+  animation-duration: 3s;
+}
+
+span.star:nth-child(4) {
+  top: 40%;
+  left: 60%; /* Spread further across the screen */
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+
+span.star:nth-child(5) {
+  top: 60%;
+  left: 80%; /* Further out */
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+
+span.star:nth-child(6) {
+  top: 80%;
+  left: 10%; /* Starting to vary the top positioning as well */
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+span.star:nth-child(7) {
+  top: 70%;
+  left: 30%; /* Different positioning for variety */
+  animation-delay: 1.2s;
+  animation-duration: 1.75s;
+}
+
+span.star:nth-child(8) {
+  top: 90%;
+  left: 50%; /* Spread across bottom half */
+  animation-delay: 1.4s;
+  animation-duration: 1.25s;
+}
+
+.hero_content {
+  text-align: center; /* Centers text horizontally inside .hero_content */
+  
+}
+
+.hero_content button {
+  display: inline-block; /*Centers button within parent block/grid*/
+  font-size: 1rem;
+}
+
+.hero_content h2{
+  font-size: 6.8535rem;
+  font-family: "polymath", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120px;
+}
+
+.hero_content h1{
+  font-size: 1rem;
+  font-family: "polymath", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120px;
+}
+
+
+@media only screen and (max-width: 600px ){
+  .hero_content h2{
+    font-size: 3.4rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 60px;
+  }
+
+  .hero_content h1{
+    font-size: 1rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 30px;
+    padding-top: 30px;
+  }
+}
