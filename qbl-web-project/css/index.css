@@ -509,17 +509,23 @@ span.star:nth-child(8) {
 
 /*Companies worked with section*/
 
-#companies_worked_with{
-  display: block;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+#companies_worked_with {
+  display: flex;  /* Changed to flexbox to center content */
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  text-align: center; /* Center text inside the content */
   width: 100%;
-  padding-bottom:150px ;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(126, 126, 126), rgb(0, 0, 0)); /* Gradient for both borders */
+  border-image-slice: 1;
 }
 
-#companies_worked_with h2{
+
+#companies_worked_with h2 {
   font-size: 1.4rem;
   font-family: "polymath", sans-serif;
   font-weight: 400;
@@ -528,10 +534,24 @@ span.star:nth-child(8) {
   color: #aaa;
 }
 
-#companies_worked_with .padel_central_img{
+#companies_worked_with .padel_central_img {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
   padding-top: 10px;
+}
+
+@media only screen and (max-width: 896px) and (orientation: landscape) {
+  #companies_worked_with .padel_central_img{
+    max-width: 250px;
+  }
+}
+
+
+@media only screen and (max-width: 896px) and (orientation: landscape) {
+  /* Adjusting font size and line-height for hero content */
+  #companies_worked_with .padel_central_img{
+    max-width: 250px;
+  }
 }
