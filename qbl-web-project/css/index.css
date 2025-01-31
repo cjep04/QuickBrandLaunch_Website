@@ -14,7 +14,6 @@
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
     background-color: #000000;
-    overflow: hidden;
     
   }
   /* 5. Improve media defaults */
@@ -288,7 +287,7 @@ li a{
   padding-left: 50px;
   padding-right: 50px;
   height: 100vh;
-  position: absolute;
+  position: relative;
   left: 0;
   width: 100%;
   height: 100%;
@@ -296,6 +295,8 @@ li a{
   margin-bottom: 150px;
   overflow: hidden;
   z-index: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 @keyframes animateBg {
   0%, 100% {
@@ -452,7 +453,7 @@ span.star:nth-child(8) {
     font-weight: 600;
     font-style: normal;
     line-height: 60px;
-    padding-top: 100px;
+    
   }
 
   .hero_content h1{
@@ -461,29 +462,28 @@ span.star:nth-child(8) {
     font-weight: 400;
     font-style: normal;
     line-height: 30px;
-    padding-top: 30px;
   }
 
   .hero_img{
     position: absolute;
-    padding-top: 490px;
     justify-content: center;
   }
 
-  .hero_content{
-    padding-top: 75px ;
+  #hero{
+    padding-top: 50px;
+    padding-bottom: 0px;
   }
 }
 
 
 @media only screen and (max-width: 896px) and (orientation: landscape) {
+  /* Adjusting font size and line-height for hero content */
   .hero_content h2 {
     font-size: 3.4rem;
     font-family: "polymath", sans-serif;
     font-weight: 600;
     font-style: normal;
     line-height: 60px;
-    padding-top: 100px;
   }
 
   .hero_content h1 {
@@ -492,16 +492,17 @@ span.star:nth-child(8) {
     font-weight: 400;
     font-style: normal;
     line-height: 30px;
-    padding-top: 30px;
   }
 
+  /* Adjusting the position of the hero image */
   .hero_img {
     position: absolute;
-    padding-top: 490px;
     justify-content: center;
+    padding-top: 200px;
   }
 
-  .hero_content {
-    padding-top: 75px;
+  /* Add space to the top of the hero section */
+  #hero {
+    padding-top: 50px;  /* Adds space to the top of the hero section */
   }
 }
