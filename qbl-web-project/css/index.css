@@ -63,12 +63,13 @@
     align-items: center; /*This centers all content on the y axis*/
     padding-left: 50px; /* Adds 50px of space inside the element, between the content and the left edge */
     padding-right: 50px;/* Adds 50px of space inside the element, between the content and the right edge */
-
+    
   }
 
   .logo{
     flex: 1; /* Make this item flexible and allow it to grow and fill the available space within the flex container.*/ 
     max-width: 50px; /*Sets initial size prior to flexing*/
+    z-index: 1;
   }
 
   @media screen and (max-width: 768px) {
@@ -85,6 +86,7 @@
     padding-bottom: 30px; /*Creates space inside of the element, between the content and the bottom edge */
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
   }
 
 li a{
@@ -292,6 +294,8 @@ li a{
   height: 100%;
   animation: animateBg 50% linear infinite ;
   margin-bottom: 150px;
+  overflow: hidden;
+  z-index: 0;
 }
 @keyframes animateBg {
   0%, 100% {
@@ -303,7 +307,7 @@ li a{
 }
 
 span.star {
-  position: absolute; /* Use absolute position for accurate placement */
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 4px;
@@ -314,6 +318,7 @@ span.star {
               0 0 0 8px rgba(255, 255, 255, 0.1),
               0 0 20px rgba(255, 255, 255, 1);
   animation: animate 3s linear infinite;
+  z-index: -1;  /* Ensures stars are always behind other elements */
 }
 
 span.star::before {
@@ -346,6 +351,7 @@ span.star:nth-child(1) {
   left: 5%; /* Use percentage to space it out more evenly */
   animation-delay: 0s;
   animation-duration: 1s;
+  z-index: -1;
 }
 
 span.star:nth-child(2) {
@@ -353,6 +359,7 @@ span.star:nth-child(2) {
   left: 20%; /* Adjust to move it further to the right */
   animation-delay: 0.2s;
   animation-duration: 3s;
+  z-index: -1;
 }
 
 span.star:nth-child(3) {
@@ -360,6 +367,7 @@ span.star:nth-child(3) {
   left: 40%; /* Spread out more */
   animation-delay: 0.4s;
   animation-duration: 3s;
+  z-index: -1;
 }
 
 span.star:nth-child(4) {
@@ -367,6 +375,7 @@ span.star:nth-child(4) {
   left: 60%; /* Spread further across the screen */
   animation-delay: 0.8s;
   animation-duration: 2.5s;
+  z-index: -1;
 }
 
 span.star:nth-child(5) {
@@ -374,6 +383,7 @@ span.star:nth-child(5) {
   left: 80%; /* Further out */
   animation-delay: 0.8s;
   animation-duration: 2.5s;
+  z-index: -1;
 }
 
 span.star:nth-child(6) {
@@ -381,6 +391,7 @@ span.star:nth-child(6) {
   left: 10%; /* Starting to vary the top positioning as well */
   animation-delay: 1s;
   animation-duration: 3s;
+  z-index: -1;
 }
 
 span.star:nth-child(7) {
@@ -388,6 +399,7 @@ span.star:nth-child(7) {
   left: 30%; /* Different positioning for variety */
   animation-delay: 1.2s;
   animation-duration: 1.75s;
+  z-index: -1;
 }
 
 span.star:nth-child(8) {
@@ -395,11 +407,14 @@ span.star:nth-child(8) {
   left: 50%; /* Spread across bottom half */
   animation-delay: 1.4s;
   animation-duration: 1.25s;
+  z-index: -1;
 }
 
 .hero_content {
+  display: inline-block;
   text-align: center; /* Centers text horizontally inside .hero_content */
-  
+  z-index: 1;
+  padding-bottom: 150px;
 }
 
 .hero_content button {
@@ -424,6 +439,11 @@ span.star:nth-child(8) {
   line-height: 120px;
 }
 
+.hero_img{
+  position: absolute;
+  padding-top: 500px;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 932px ) {
   .hero_content h2{
@@ -442,4 +462,15 @@ span.star:nth-child(8) {
     line-height: 30px;
     padding-top: 30px;
   }
+
+  .hero_img{
+    position: absolute;
+    padding-top: 490px;
+    justify-content: center;
+  }
+
+  .hero_content{
+    padding-top: 75px ;
+  }
 }
+
