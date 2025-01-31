@@ -296,7 +296,7 @@ li a{
   overflow: hidden;
   z-index: 0;
   padding-top: 150px;
-  padding-bottom: 150px;
+  padding-bottom: 200px;
 }
 @keyframes animateBg {
   0%, 100% {
@@ -516,6 +516,7 @@ span.star:nth-child(8) {
   align-items: center;
   text-align: center;
   width: 100%;
+  padding-bottom:150px ;
 }
 
 #companies_worked_with h2{
