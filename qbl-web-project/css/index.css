@@ -380,14 +380,6 @@ span.star:nth-child(4) {
 }
 
 span.star:nth-child(5) {
-  top: 60%;
-  left: 80%; /* Further out */
-  animation-delay: 0.8s;
-  animation-duration: 2.5s;
-  z-index: -1;
-}
-
-span.star:nth-child(6) {
   top: 80%;
   left: 10%; /* Starting to vary the top positioning as well */
   animation-delay: 1s;
@@ -395,7 +387,7 @@ span.star:nth-child(6) {
   z-index: -1;
 }
 
-span.star:nth-child(7) {
+span.star:nth-child(6) {
   top: 70%;
   left: 30%; /* Different positioning for variety */
   animation-delay: 1.2s;
@@ -403,7 +395,7 @@ span.star:nth-child(7) {
   z-index: -1;
 }
 
-span.star:nth-child(8) {
+span.star:nth-child(7) {
   top: 90%;
   left: 50%; /* Spread across bottom half */
   animation-delay: 1.4s;
@@ -442,7 +434,7 @@ span.star:nth-child(8) {
 
 .hero_img{
   position: absolute;
-  padding-top: 500px;
+  padding-top: 600px;
   justify-content: center;
 }
 
