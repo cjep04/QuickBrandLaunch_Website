@@ -220,7 +220,7 @@ li a{
     font-style: normal;
     box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
-    
+    margin-left: 15px;
 }
 
 
