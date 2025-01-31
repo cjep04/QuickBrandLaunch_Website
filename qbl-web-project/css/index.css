@@ -161,7 +161,7 @@ li a{
     display: block; /* Show the menu when the hamburger is clicked */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 776px) {
     .menu_items {
         display: none; /* Hide the menu by default on small screens */
         position: absolute;
@@ -220,7 +220,6 @@ li a{
     font-style: normal;
     box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
-    margin-left: 15px;
     
 }
 
@@ -292,6 +291,7 @@ li a{
   width: 100%;
   height: 100%;
   animation: animateBg 50% linear infinite ;
+  margin-bottom: 150px;
 }
 @keyframes animateBg {
   0%, 100% {
@@ -405,6 +405,7 @@ span.star:nth-child(8) {
 .hero_content button {
   display: inline-block; /*Centers button within parent block/grid*/
   font-size: 1rem;
+  align-self: center;
 }
 
 .hero_content h2{
@@ -424,7 +425,7 @@ span.star:nth-child(8) {
 }
 
 
-@media only screen and (max-width: 600px ){
+@media only screen and (max-width: 932px ) {
   .hero_content h2{
     font-size: 3.4rem;
     font-family: "polymath", sans-serif;
