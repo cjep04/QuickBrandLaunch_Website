@@ -543,15 +543,14 @@ span.star:nth-child(8) {
 }
 
 @media only screen and (max-width: 896px) and (orientation: landscape) {
-  #companies_worked_with .padel_central_img{
-    max-width: 250px;
+  #companies_worked_with .padel_central_img {
+    max-width: 250px;  /* Limit the max width for smaller screens */
+    width: 100%;  /* Allow the image to resize based on container size */
   }
 }
 
-
-@media only screen and (max-width: 896px) and (orientation: landscape) {
-  /* Adjusting font size and line-height for hero content */
-  #companies_worked_with .padel_central_img{
-    max-width: 250px;
+@media only screen and (max-width: 768px) {
+  #companies_worked_with .padel_central_img {
+    max-width: 200px;  /* Further reduce the max width for smaller devices */
   }
 }
