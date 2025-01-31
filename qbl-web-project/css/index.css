@@ -445,13 +445,14 @@ span.star:nth-child(8) {
   justify-content: center;
 }
 
-@media only screen and (max-width: 932px ) {
+@media only screen and (max-width: 704px ) {
   .hero_content h2{
     font-size: 3.4rem;
     font-family: "polymath", sans-serif;
     font-weight: 600;
     font-style: normal;
     line-height: 60px;
+    padding-top: 100px;
   }
 
   .hero_content h1{
@@ -474,3 +475,33 @@ span.star:nth-child(8) {
   }
 }
 
+
+@media only screen and (max-width: 896px) and (orientation: landscape) {
+  .hero_content h2 {
+    font-size: 3.4rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 60px;
+    padding-top: 100px;
+  }
+
+  .hero_content h1 {
+    font-size: 1rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 30px;
+    padding-top: 30px;
+  }
+
+  .hero_img {
+    position: absolute;
+    padding-top: 490px;
+    justify-content: center;
+  }
+
+  .hero_content {
+    padding-top: 75px;
+  }
+}
