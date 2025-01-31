@@ -355,13 +355,6 @@ span.star:nth-child(1) {
   z-index: -1;
 }
 
-span.star:nth-child(2) {
-  top: 0;
-  left: 20%; /* Adjust to move it further to the right */
-  animation-delay: 0.2s;
-  animation-duration: 3s;
-  z-index: -1;
-}
 
 span.star:nth-child(3) {
   top: 20%;
