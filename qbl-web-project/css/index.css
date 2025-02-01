@@ -418,12 +418,12 @@ span.star:nth-child(8) {
 }
 
 .hero_content button {
-  display: inline-block; /*Centers button within parent block/grid*/
+  display: inline-block; /* Centers button within parent block/grid */
   font-size: 1rem;
   align-self: center;
 }
 
-.hero_content h2{
+.hero_content h2 {
   font-size: 6.8535rem;
   font-family: "polymath", sans-serif;
   font-weight: 600;
@@ -431,7 +431,7 @@ span.star:nth-child(8) {
   line-height: 120px;
 }
 
-.hero_content h1{
+.hero_content h1 {
   font-size: 1rem;
   font-family: "polymath", sans-serif;
   font-weight: 400;
@@ -439,23 +439,22 @@ span.star:nth-child(8) {
   line-height: 120px;
 }
 
-.hero_img{
+.hero_img {
   position: absolute;
   padding-top: 500px;
   justify-content: center;
 }
 
-@media only screen and (max-width: 704px ) {
-  .hero_content h2{
+@media only screen and (max-width: 704px) {
+  .hero_content h2 {
     font-size: 3.4rem;
     font-family: "polymath", sans-serif;
     font-weight: 600;
     font-style: normal;
     line-height: 60px;
-    
   }
 
-  .hero_content h1{
+  .hero_content h1 {
     font-size: 1rem;
     font-family: "polymath", sans-serif;
     font-weight: 400;
@@ -463,17 +462,16 @@ span.star:nth-child(8) {
     line-height: 30px;
   }
 
-  .hero_img{
+  .hero_img {
     position: absolute;
     justify-content: center;
   }
 
-  #hero{
-    padding-top: 50px;
+  #hero {
+    padding-top: 0px; /* Remove extra space at the top in smaller screens */
     padding-bottom: 0px;
   }
 }
-
 
 @media only screen and (max-width: 896px) and (orientation: landscape) {
   /* Adjusting font size and line-height for hero content */
@@ -500,9 +498,10 @@ span.star:nth-child(8) {
     padding-top: 200px;
   }
 
-  /* Add space to the top of the hero section */
+  /* Reduce padding-top to fix gap issue */
   #hero {
-    padding-top: 50px;  /* Adds space to the top of the hero section */
+    padding-top: 0px;  /* Remove unnecessary space */
+    padding-bottom: 0px; /* Remove bottom padding */
   }
 }
 
@@ -515,14 +514,13 @@ span.star:nth-child(8) {
   align-items: center; /* Center items vertically */
   text-align: center; /* Center text inside the content */
   width: 100%;
-  padding-top: 50px;
+  padding-top: 20px; /* Reduced padding to minimize gap */
   padding-bottom: 50px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(126, 126, 126), rgb(0, 0, 0)); /* Gradient for both borders */
   border-image-slice: 1;
 }
-
 
 #companies_worked_with h2 {
   font-size: 1.4rem;
@@ -531,6 +529,7 @@ span.star:nth-child(8) {
   font-style: normal;
   line-height: 60px;
   color: #aaa;
+  padding-top: 25px;
 }
 
 #companies_worked_with .padel_central_img {
