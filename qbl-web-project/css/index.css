@@ -490,8 +490,8 @@ span.star:nth-child(8) {
   padding-top: 500px;
   justify-content: center;
 }
-
-@media only screen and (max-width: 704px) {
+/* iPhones - Portrait */
+@media screen and (min-width: 375px) and (max-width: 430px) and (orientation: portrait) {
   .hero_content h2 {
     font-size: 3.4rem;
     font-family: "polymath", sans-serif;
@@ -511,6 +511,8 @@ span.star:nth-child(8) {
   .hero_img {
     position: absolute;
     justify-content: center;
+    padding-bottom: 6px;
+    
   }
 
   #hero {
@@ -519,8 +521,8 @@ span.star:nth-child(8) {
   }
 }
 
-@media only screen and (max-width: 896px) and (orientation: landscape) {
-  /* Adjusting font size and line-height for hero content */
+/* iPhones - Landscape */
+@media screen and (min-width: 667px) and (max-width: 932px) and (orientation: landscape) {  /* Adjusting font size and line-height for hero content */
   .hero_content h2 {
     font-size: 3.4rem;
     font-family: "polymath", sans-serif;
@@ -552,6 +554,104 @@ span.star:nth-child(8) {
 
 }
 
+
+/* Pixel/Samsung - Portrait */
+@media screen and (max-width: 412px) and (orientation: portrait)  {
+  .hero_content h2 {
+    font-size: 3.4rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 60px;
+  }
+
+  .hero_content h1 {
+    font-size: 1rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 30px;
+  }
+
+  .hero_img {
+    position: absolute;
+    justify-content: center;
+    padding-bottom: 0px;
+  }
+
+  #hero {
+    padding-top: 100px; /* Remove extra space at the top in smaller screens */
+    padding-bottom: 0px;
+  }
+}
+
+/* Pixel/Samsung - Landscape */
+@media screen and (min-width: 740px) and (max-width: 915px) and (orientation: landscape) {
+  /* Example adjustments */
+ 
+  .menu_items {
+    backdrop-filter: blur(5px); /* Reduce blur for performance */
+  }
+  #hero {
+    padding-top: 100px; /* More spacing for tablet */
+    padding-bottom: 0px ;
+    margin-bottom: 0px;
+  }
+  .hero_img {
+    position: absolute;
+    justify-content: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  .hero_content h2 {
+    font-size: 4rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 90px;
+  }
+
+  .hero_content h1 {
+    font-size: 1rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 30px;
+  }
+
+}
+
+/* iPad - Portrait */
+@media screen and (min-width: 540px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Example adjustments */
+  #hero {
+    padding-top: 200px; /* More spacing for tablet */
+    padding-bottom: 50px ;
+  }
+
+  .hero_content h2 {
+    font-size: 5rem !important;
+    line-height: 100px;
+  }
+}
+
+/* iPad - Landscape */
+@media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  /* Example adjustments */
+  nav {
+    padding-bottom: 50px; /* More navigation spacing */
+  }
+
+  .hero_content h2 {
+    font-size: 7.5rem !important; /* Utilize larger screen space */
+  }
+  #hero {
+    padding-top: 200px; /* More spacing for tablet */
+    padding-bottom: 10px ;
+  }
+
+}
 /*Companies worked with section*/
 
 #companies_worked_with {
@@ -561,7 +661,7 @@ span.star:nth-child(8) {
   align-items: center; /* Center items vertically */
   text-align: center; /* Center text inside the content */
   width: 100%;
-  padding-top: 20px; /* Reduced padding to minimize gap */
+  padding-top: 0px; /* Reduced padding to minimize gap */
   padding-bottom: 50px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
