@@ -326,22 +326,19 @@ li a{
 
 /*Hero Section*/
 
+/* Adjust the #hero section */
 #hero {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
-  height: 100vh;
+  height: 100vh; /* Keep full height */
   position: relative;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  animation: animateBg 50% linear infinite ;
-  overflow: hidden;
-  z-index: 0;
-  padding-top: 150px;
-  padding-bottom: 200px;
+  overflow: visible;
+  z-index: 1;
+  padding-top: 50px; /* Reduced padding-top */
+  padding-bottom: 0px; /* Ensure no extra space at the bottom */
 }
 @keyframes animateBg {
   0%, 100% {
@@ -364,7 +361,7 @@ span.star {
               0 0 0 8px rgba(255, 255, 255, 0.1),
               0 0 20px rgba(255, 255, 255, 1);
   animation: animate 3s linear infinite;
-  z-index: -1;  /* Ensures stars are always behind other elements */
+  z-index: 0;  /* Ensures stars are always behind other elements */
 }
 
 span.star::before {
@@ -397,7 +394,7 @@ span.star:nth-child(1) {
   left: 5%; /* Use percentage to space it out more evenly */
   animation-delay: 0s;
   animation-duration: 1s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(2) {
@@ -405,7 +402,7 @@ span.star:nth-child(2) {
   left: 20%; /* Adjust to move it further to the right */
   animation-delay: 0.2s;
   animation-duration: 3s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(3) {
@@ -413,7 +410,7 @@ span.star:nth-child(3) {
   left: 40%; /* Spread out more */
   animation-delay: 0.4s;
   animation-duration: 3s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(4) {
@@ -421,7 +418,7 @@ span.star:nth-child(4) {
   left: 60%; /* Spread further across the screen */
   animation-delay: 0.8s;
   animation-duration: 2.5s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(5) {
@@ -429,7 +426,7 @@ span.star:nth-child(5) {
   left: 80%; /* Further out */
   animation-delay: 0.8s;
   animation-duration: 2.5s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(6) {
@@ -437,7 +434,7 @@ span.star:nth-child(6) {
   left: 10%; /* Starting to vary the top positioning as well */
   animation-delay: 1s;
   animation-duration: 3s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(7) {
@@ -445,7 +442,7 @@ span.star:nth-child(7) {
   left: 30%; /* Different positioning for variety */
   animation-delay: 1.2s;
   animation-duration: 1.75s;
-  z-index: -1;
+  z-index: 0;
 }
 
 span.star:nth-child(8) {
@@ -453,14 +450,14 @@ span.star:nth-child(8) {
   left: 50%; /* Spread across bottom half */
   animation-delay: 1.4s;
   animation-duration: 1.25s;
-  z-index: -1;
+  z-index: 0;
 }
 
 .hero_content {
   display: inline-block;
   text-align: center; /* Centers text horizontally inside .hero_content */
   z-index: 1;
-  padding-bottom: 150px;
+  padding-bottom: 0px;
 }
 
 .hero_content button {
@@ -485,217 +482,207 @@ span.star:nth-child(8) {
   line-height: 120px;
 }
 
-.hero_img {
-  position: absolute;
-  padding-top: 500px;
-  justify-content: center;
-}
-/* iPhones - Portrait */
-@media screen and (min-width: 375px) and (max-width: 430px) and (orientation: portrait) {
+
+
+/* Media Query for Tablets */
+@media screen and (max-width: 1169px) {
+  #hero {
+    padding-top: 0px; /* Adjust padding for smaller screens */
+  }
+
   .hero_content h2 {
-    font-size: 3.4rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    line-height: 60px;
+    font-size: 4rem;  /* Reduce font size on medium screens */
+    line-height: 100px; /* Adjust line height accordingly */
   }
 
   .hero_content h1 {
-    font-size: 1rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 30px;
+    font-size: 1.2rem; /* Increase font size slightly for small screens */
+    line-height: 100px;
   }
 
-  .hero_img {
-    position: absolute;
-    justify-content: center;
-    padding-bottom: 6px;
-    
-  }
-
-  #hero {
-    padding-top: 100px; /* Remove extra space at the top in smaller screens */
-    padding-bottom: 0px;
+  .hero_content button {
+    font-size: 0.9rem; /* Slightly smaller button text */
   }
 }
 
-/* iPhones - Landscape */
-@media screen and (min-width: 667px) and (max-width: 932px) and (orientation: landscape) {  /* Adjusting font size and line-height for hero content */
+/* Landscape Media Query for Tablets */
+@media screen and (max-width: 1169px) and (orientation: landscape) {
   .hero_content h2 {
-    font-size: 3.4rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    line-height: 60px;
+    font-size: 4.5rem; /* Slightly larger font size for landscape orientation */
+    line-height: 110px; /* Adjust line height for landscape */
   }
 
   .hero_content h1 {
-    font-size: 1rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 30px;
+    font-size: 1.3rem; /* Increase font size in landscape */
+    line-height: 110px;
   }
 
-  /* Adjusting the position of the hero image */
-  .hero_img {
-    position: absolute;
-    justify-content: center;
-    padding-top: 200px;
-  }
-
-  /* Reduce padding-top to fix gap issue */
-  #hero {
-    padding-top: 75px;  /* Remove unnecessary space */
-    padding-bottom: 0px; /* Remove bottom padding */
-  }
-
-}
-
-
-/* Pixel/Samsung - Portrait */
-@media screen and (max-width: 412px) and (orientation: portrait)  {
-  .hero_content h2 {
-    font-size: 3.4rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    line-height: 60px;
-  }
-
-  .hero_content h1 {
-    font-size: 1rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 30px;
-  }
-
-  .hero_img {
-    position: absolute;
-    justify-content: center;
-    padding-bottom: 0px;
-  }
-
-  #hero {
-    padding-top: 100px; /* Remove extra space at the top in smaller screens */
-    padding-bottom: 0px;
+  .hero_content button {
+    font-size: 1rem; /* Adjust button size for landscape mode */
   }
 }
 
-/* Pixel/Samsung - Landscape */
-@media screen and (min-width: 740px) and (max-width: 915px) and (orientation: landscape) {
-  /* Example adjustments */
- 
-  .menu_items {
-    backdrop-filter: blur(5px); /* Reduce blur for performance */
-  }
-  #hero {
-    padding-top: 100px; /* More spacing for tablet */
-    padding-bottom: 0px ;
-    margin-bottom: 0px;
-  }
-  .hero_img {
-    position: absolute;
-    justify-content: center;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-  }
-
+/* Media Query for Small Devices */
+@media screen and (max-width: 932px) {
   .hero_content h2 {
-    font-size: 4rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 600;
-    font-style: normal;
+    font-size: 4rem;  /* Make heading smaller */
     line-height: 90px;
   }
 
   .hero_content h1 {
-    font-size: 1rem;
-    font-family: "polymath", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-size: 1.1rem; /* Adjust h1 font size for small devices */
+    line-height: 35px;
+  }
+
+  .hero_content button {
+    font-size: 0.9rem; /* Smaller button text for small devices */
+    padding: 10px 20px; /* Adjust button padding for small screens */
+  }
+}
+
+/* Landscape Media Query for Small Devices */
+@media screen and (max-width: 932px) and (orientation: landscape) {
+  .hero_content h2 {
+    font-size: 4.2rem; /* Increase font size slightly for landscape mode */
+    line-height: 95px;
+  }
+
+  .hero_content h1 {
+    font-size: 1.2rem; /* Increase font size slightly for small landscape screens */
+    line-height: 40px;
+  }
+
+  .hero_content button {
+    font-size: 1rem; /* Adjust button size for landscape mode */
+  }
+}
+
+/* Media Query for Extra Small Devices (Mobile Phones) */
+@media screen and (max-width: 740px) {
+  .hero_content h2 {
+    font-size: 3rem; /* Smaller font size for mobile screens */
+    line-height: 80px;
+  }
+
+  .hero_content h1 {
+    font-size: 1rem; /* Adjust for mobile */
+    line-height: 25px;
+  }
+
+  .hero_content button {
+    font-size: 0.8rem; /* Make button text smaller */
+    padding: 8px 16px; /* Adjust button padding for small mobile screens */
+  }
+}
+
+/* Landscape Media Query for Extra Small Devices */
+@media screen and (max-width: 740px) and (orientation: landscape) {
+  .hero_content h2 {
+    font-size: 3.2rem; /* Adjust heading size for small landscape screens */
+    line-height: 85px;
+  }
+
+  .hero_content h1 {
+    font-size: 1.1rem; /* Adjust font size for mobile landscape */
     line-height: 30px;
   }
 
-}
-
-/* iPad - Portrait */
-@media screen and (min-width: 540px) and (max-width: 1024px) and (orientation: portrait) {
-  /* Example adjustments */
-  #hero {
-    padding-top: 200px; /* More spacing for tablet */
-    padding-bottom: 50px ;
-  }
-
-  .hero_content h2 {
-    font-size: 5rem !important;
-    line-height: 100px;
+  .hero_content button {
+    font-size: 0.9rem; /* Increase button font size slightly */
+    padding: 10px 18px; /* Adjust padding for landscape mode */
   }
 }
 
-/* iPad - Landscape */
-@media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-  /* Example adjustments */
-  nav {
-    padding-bottom: 50px; /* More navigation spacing */
-  }
-
-  .hero_content h2 {
-    font-size: 7.5rem !important; /* Utilize larger screen space */
-  }
-  #hero {
-    padding-top: 200px; /* More spacing for tablet */
-    padding-bottom: 10px ;
-  }
-
+/* Hero Section */
+#hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100vh; /* Full viewport height to ensure enough space */
+  position: relative; /* Ensures that absolute positioning for stars works */
+  overflow: visible; /* Allow stars to overflow beyond this section */
+  z-index: 1; /* Set a z-index for the whole section */
+  padding-top: 150px;
 }
-/*Companies worked with section*/
 
+/* Hero image section */
+#hero.image {
+  display: block;
+  width: 100%; /* Full page width */
+  height: 250px; /* Fixed height of 250px */
+  background-color: transparent; /* Transparent background */
+  position: relative; /* Keep stars inside this container */
+  z-index: 2; /* The image's z-index is higher than stars */
+}
+
+/* Hero Image */
+.hero_img {
+  max-width: 100%;
+  width: auto;
+  display: block;
+  margin: 0 auto; /* Keep the image centered */
+  padding-top: 0; /* Remove padding-top */
+  margin-top: 0; /* Ensure there's no top margin */
+  object-fit: cover; /* Make sure the image fills its container properly */
+  z-index: 3; /* Keeps the image above stars */
+}
+
+
+
+/* Companies worked with section */
 #companies_worked_with {
-  display: flex;  /* Changed to flexbox to center content */
-  flex-direction: column; /* Align items vertically */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  text-align: center; /* Center text inside the content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  padding-top: 0px; /* Reduced padding to minimize gap */
+  padding-top: 0px;
+  padding-bottom: 150px;
+}
+
+/* Content div */
+#companies_worked_with .content {
+  width: 100%;
   padding-bottom: 50px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(126, 126, 126), rgb(0, 0, 0)); /* Gradient for both borders */
-  border-image-slice: 1;
+  border-image-slice: 2;
+  background-color: #000000;
+  z-index: 4;
 }
 
+/* Heading inside content */
 #companies_worked_with h2 {
   font-size: 1.4rem;
   font-family: "polymath", sans-serif;
   font-weight: 400;
-  font-style: normal;
   line-height: 60px;
   color: #aaa;
   padding-top: 25px;
 }
 
+/* Padel central image */
 #companies_worked_with .padel_central_img {
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 500px;
   padding-top: 10px;
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  display: block; /* Ensure the image behaves like a block-level element */
 }
 
-@media only screen and (max-width: 896px) and (orientation: landscape) {
+/* Optional: Make the image size scale on different screen sizes */
+@media screen and (max-width: 768px) {
   #companies_worked_with .padel_central_img {
-    max-width: 250px;  /* Limit the max width for smaller screens */
-    width: 100%;  /* Allow the image to resize based on container size */
+    max-width: 90%;  /* Reduces the width on smaller screens */
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   #companies_worked_with .padel_central_img {
-    max-width: 200px;  /* Further reduce the max width for smaller devices */
+    max-width: 80%;  /* Further reduce width on very small screens */
   }
 }
