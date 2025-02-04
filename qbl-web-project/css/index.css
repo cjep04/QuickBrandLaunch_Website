@@ -720,6 +720,12 @@ span.star:nth-child(8) {
   z-index: 3; /* Keeps the image above stars */
 }
 
+@media screen and (max-width: 740px) and (orientation: landscape) {
+  .hero_img {
+    margin-top: 25px;
+  }
+  }
+
 
 
 /* Companies worked with section */
