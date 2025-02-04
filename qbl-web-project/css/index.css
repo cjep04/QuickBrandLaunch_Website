@@ -56,14 +56,13 @@
   */
 
   header{
-    background-color:hsla(255, 255, 255, );
+    background-color: #000000; /*Makes the background color black*/
     display: flex; /*This Creates a Flex box which displays content in a horizontal line*/
     justify-content: space-between; /* This creates an equal distance between each item within the flex box*/
     align-items: center; /*This centers all content on the y axis*/
     padding-left: 50px; /* Adds 50px of space inside the element, between the content and the left edge */
     padding-right: 50px;/* Adds 50px of space inside the element, between the content and the right edge */
-    position: relative; /* Ensure navbar is above all elements */
-    z-index: 10; /* Higher than the stars and hero section */
+    
   }
 
   .logo{
@@ -338,7 +337,7 @@ li a{
   height: 40vh; /* Reduce height from 120vh to 90vh */
   position: relative;
   overflow: visible;
-  z-index: 5;
+  z-index: 1;
   padding-bottom: 50px; /* Reduce bottom padding */
 }
 
@@ -458,7 +457,7 @@ span.star:nth-child(8) {
 /* Ensuring Hero Content is Centered with Enough Space */
 .hero_content {
   text-align: center;
-  z-index: 6;
+  z-index: 2;
   padding-top: 20px; /* Adjust padding to prevent overlap */
   padding-bottom: 20px; /* Adjust space below text */
 }
@@ -468,7 +467,6 @@ span.star:nth-child(8) {
   display: inline-block;
   margin-top: 20px; /* Adds a buffer space to prevent overlap */
   padding: 15px 40px; /* Maintain a comfortable button size */
-  z-index: 7;
 }
 
 .hero_content h2 {
@@ -507,8 +505,6 @@ span.star:nth-child(8) {
 
   .hero_content button {
     font-size: 0.9rem; /* Slightly smaller button text */
-    margin-bottom: 150px;
-
   }
 
   #hero {
@@ -542,8 +538,6 @@ span.star:nth-child(8) {
 
   .hero_content button {
     font-size: 1rem; /* Adjust button size for landscape mode */
-    margin-bottom: 150px;
-
   }
   #hero {
     display: flex;
@@ -716,6 +710,7 @@ span.star:nth-child(8) {
 /* Hero Image */
 .hero_img {
   max-width: 100%;
+  max-height: 70%;
   width: auto;
   display: block;
   margin: 0 auto; /* Keep the image centered */
@@ -748,7 +743,7 @@ span.star:nth-child(8) {
   border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(126, 126, 126), rgb(0, 0, 0)); /* Gradient for both borders */
   border-image-slice: 2;
   background-color: #000000;
-  z-index: 10;
+  z-index: 4;
 }
 
 /* Heading inside content */
