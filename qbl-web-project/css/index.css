@@ -748,7 +748,7 @@ span.star:nth-child(8) {
   border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(126, 126, 126), rgb(0, 0, 0)); /* Gradient for both borders */
   border-image-slice: 2;
   background-color: #000000;
-  z-index: 4;
+  z-index: 10;
 }
 
 /* Heading inside content */
