@@ -465,9 +465,8 @@ span.star:nth-child(8) {
 /* Hero Button Adjustments */
 .hero_content button {
   display: inline-block;
-  font-size: 1rem;
   margin-top: 20px; /* Adds a buffer space to prevent overlap */
-  padding: 12px 24px; /* Maintain a comfortable button size */
+  padding: 15px 40px; /* Maintain a comfortable button size */
 }
 
 .hero_content h2 {
@@ -664,6 +663,7 @@ span.star:nth-child(8) {
   .hero_content button {
     font-size: 0.9rem; /* Increase button font size slightly */
     padding: 10px 18px; /* Adjust padding for landscape mode */
+    margin-bottom: 125px;
   }
   #hero {
     display: flex;
