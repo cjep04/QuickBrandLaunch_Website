@@ -56,7 +56,7 @@
   */
 
   header{
-    background-color: #000000; /*Makes the background color black*/
+    background-color:hsla(255, 255, 255, );
     display: flex; /*This Creates a Flex box which displays content in a horizontal line*/
     justify-content: space-between; /* This creates an equal distance between each item within the flex box*/
     align-items: center; /*This centers all content on the y axis*/
