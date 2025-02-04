@@ -677,7 +677,7 @@ span.star:nth-child(8) {
     overflow: visible;
     z-index: 1;
     padding-bottom: 20px; /* Reduce bottom padding */
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     max-width: 100%;
     margin-top: 60px;
   }
