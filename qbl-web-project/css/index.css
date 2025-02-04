@@ -62,7 +62,8 @@
     align-items: center; /*This centers all content on the y axis*/
     padding-left: 50px; /* Adds 50px of space inside the element, between the content and the left edge */
     padding-right: 50px;/* Adds 50px of space inside the element, between the content and the right edge */
-    
+    position: relative; /* Ensure navbar is above all elements */
+    z-index: 10; /* Higher than the stars and hero section */
   }
 
   .logo{
@@ -337,7 +338,7 @@ li a{
   height: 40vh; /* Reduce height from 120vh to 90vh */
   position: relative;
   overflow: visible;
-  z-index: 1;
+  z-index: 5;
   padding-bottom: 50px; /* Reduce bottom padding */
 }
 
@@ -457,7 +458,7 @@ span.star:nth-child(8) {
 /* Ensuring Hero Content is Centered with Enough Space */
 .hero_content {
   text-align: center;
-  z-index: 2;
+  z-index: 6;
   padding-top: 20px; /* Adjust padding to prevent overlap */
   padding-bottom: 20px; /* Adjust space below text */
 }
@@ -467,7 +468,7 @@ span.star:nth-child(8) {
   display: inline-block;
   margin-top: 20px; /* Adds a buffer space to prevent overlap */
   padding: 15px 40px; /* Maintain a comfortable button size */
-  z-index: 4;
+  z-index: 7;
 }
 
 .hero_content h2 {
