@@ -507,6 +507,8 @@ span.star:nth-child(8) {
 
   .hero_content button {
     font-size: 0.9rem; /* Slightly smaller button text */
+    margin-bottom: 150px;
+
   }
 
   #hero {
@@ -540,6 +542,8 @@ span.star:nth-child(8) {
 
   .hero_content button {
     font-size: 1rem; /* Adjust button size for landscape mode */
+    margin-bottom: 150px;
+
   }
   #hero {
     display: flex;
