@@ -324,6 +324,9 @@ li a{
     box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7); /* Glow effect around the border */
 }
 
+
+
+
 /*Hero Section*/
 
 /* Adjust the #hero section */
@@ -372,7 +375,7 @@ span.star::before {
   transform: translateY(-50%);
   width: 300px;
   height: 1px;
-  background: linear-gradient(90deg, #fff, transparent);
+  background: linear-gradient(90deg, #F16A2E, transparent);
 }
 
 @keyframes animate {
@@ -783,3 +786,218 @@ span.star:nth-child(8) {
     max-width: 50%;  /* Further reduce width on very small screens */
   }
 }
+
+
+/* The Process Section */
+#the_process {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "polymath", sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  font-size: 2.5rem;
+  padding-bottom: 50px;
+}
+
+#the_process h2{
+  padding-bottom: 50px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  border-radius: 20px;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 70vw;
+  max-width: 400px;
+  max-height: 500px;
+  background: #000000;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+
+
+.box .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1; /* Ensure content stays above effects */
+}
+
+.box .content h1 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem); /* Improved fluid typography */
+  font-family: "polymath", sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.box .content p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-family: "polymath", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.box:nth-child(1):before,
+.box:nth-child(1):after {
+  background: conic-gradient(from var(--angle), #000000, #F16A2E);
+}
+
+.box:nth-child(2):before,
+.box:nth-child(2):after {
+  background: conic-gradient(from var(--angle), #000000, #F16A2E);
+}
+
+.box:nth-child(3):before,
+.box:nth-child(3):after {
+  background: conic-gradient(from var(--angle), #000000, #F16A2E);
+}
+
+.box::after {
+  z-index: -2;
+  filter: blur(20px);
+}
+
+.box::before,
+.box::after {
+  animation: glowing-border 3.5s linear infinite;
+}
+
+.box::after {
+  animation: glowing-border 3.5s linear infinite, blur-effect 3.5s linear infinite;
+}
+
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 53deg;
+  inherits: false;
+}
+
+@keyframes glowing-border {
+  from {
+      --angle: 53deg;
+  }
+
+  to {
+      --angle: 413deg;
+  }
+}
+
+@keyframes blur-effect {
+  from {
+      filter: blur(20px);
+  }
+
+  to {
+      filter: blur(19px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+      gap: 80px;
+  }
+
+  .box {
+      width: 35vw;
+      height: 45vh;
+  }
+
+  .box .content h1 {
+      font-size: clamp(1.5rem, 5vw, 1.7rem);
+  }
+
+  .box .content p,
+  .box .content h3 {
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+  }
+
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 12px;
+  }
+
+  .card {
+      gap: 40px;
+  }
+
+  .box {
+      width: 40vw;
+      height: 40vh;
+  }
+
+  .box .content {
+      padding: 10px 15px;
+  }
+
+  .box .content h1 {
+      font-size: clamp(1.3rem, 3vw, 1.4rem);
+  }
+
+  .box .content p,
+  .box .content h3 {
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+      width: 70vw;
+      height: 35vh;
+      padding: 10px;
+  }
+
+  .content {
+      gap: 5px;
+      padding: 10px;
+  }
+
+  .content h1 {
+      font-size: 1.3rem;
+  }
+
+  .content p,
+  .content h3 {
+      font-size: 1rem;
+  }
+}
+
