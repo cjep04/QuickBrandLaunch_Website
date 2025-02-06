@@ -743,6 +743,7 @@ span.star:nth-child(8) {
   width: 100%;
   padding-top: 0px;
   padding-bottom: 150px;
+  z-index: 3;
 }
 
 /* Content div */
