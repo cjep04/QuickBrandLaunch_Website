@@ -721,6 +721,7 @@ span.star:nth-child(8) {
   margin-top: 0; /* Ensure there's no top margin */
   object-fit: cover; /* Make sure the image fills its container properly */
   z-index: 3; /* Keeps the image above stars */
+  margin-top: 150px;
 }
 
 @media screen and (max-width: 740px) and (orientation: landscape) {
