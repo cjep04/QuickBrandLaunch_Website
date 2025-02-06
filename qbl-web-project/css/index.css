@@ -592,6 +592,7 @@ span.star:nth-child(8) {
     z-index: 1;
     padding-bottom: 50px; /* Reduce bottom padding */
     margin-bottom: 50px;
+    margin-top: 70px;
   }
   
 
@@ -828,7 +829,7 @@ span.star:nth-child(8) {
   width: 70vw;
   max-width: 400px;
   max-height: 500px;
-  background: #000000;
+  background: #252525;
   padding: 20px;
   margin: 20px;
   border-radius: 20px;
