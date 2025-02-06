@@ -745,6 +745,8 @@ span.star:nth-child(8) {
   padding-top: 0px;
   padding-bottom: 150px;
   z-index: 7;
+  background-color: #000000;
+  overflow: hidden;
 }
 
 /* Content div */
