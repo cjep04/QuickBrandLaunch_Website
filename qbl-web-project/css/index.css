@@ -1,107 +1,99 @@
-/* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+/* ==========================================================================
+   Global Reset & Base Styles
+   ========================================================================== */
+
+   *, *::before, *::after {
     box-sizing: border-box;
   }
-  /* 2. Remove default margin */
+  
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
+  
+  html {
+    font-size: 16px;
+  }
+  
   body {
-    /* 3. Add accessible line-height */
     line-height: 1.5;
-    /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
-    background-color: #000000;
-    
+    background-color: #000;
   }
-  /* 5. Improve media defaults */
+  
   img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
   }
-  /* 6. Inherit fonts for form controls */
+  
   input, button, textarea, select {
     font: inherit;
   }
-  /* 7. Avoid text overflows */
+  
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
     color: #fff;
   }
-  /* 8. Improve line wrapping */
+  
+  /* Optional text wrapping if supported */
   p {
     text-wrap: pretty;
   }
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }
-  /*
-    9. Create a root stacking context
-  */
-  #root, #__next {
+  
+  /* Create root stacking context */
+  #root,
+  #__next {
     isolation: isolate;
   }
   
-  a{
+  a {
     text-decoration: none;
   }
-
-  html{
-    font-size: 16px;
+  
+  /* ==========================================================================
+     Navigation Section
+     ========================================================================== */
+  
+  /* Header & Logo */
+  header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
   }
-  /*
-  Nav Section
-  */
-
-  header{
-    background-color: #000000; /*Makes the background color black*/
-    display: flex; /*This Creates a Flex box which displays content in a horizontal line*/
-    justify-content: space-between; /* This creates an equal distance between each item within the flex box*/
-    align-items: center; /*This centers all content on the y axis*/
-    padding-left: 50px; /* Adds 50px of space inside the element, between the content and the left edge */
-    padding-right: 50px;/* Adds 50px of space inside the element, between the content and the right edge */
-    
-  }
-
-  .logo{
-    flex: 1; /* Make this item flexible and allow it to grow and fill the available space within the flex container.*/ 
-    max-width: 50px; /*Sets initial size prior to flexing*/
+  
+  .logo {
+    flex: 1;
+    max-width: 50px;
     z-index: 1;
   }
-
-  @media screen and (max-width: 768px) {
-    .logo{
-        margin-top: 30px;
-    }
-}
-        
-    
   
+  /* Navigation list */
   nav {
-    color: #fff; /*Sets the text color within the nav section to white*/
-    display: flex; /*Alows the list items to flex and sets them in a horizontal line*/
-    padding-bottom: 30px; /*Creates space inside of the element, between the content and the bottom edge */
+    color: #fff;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1;
+    padding-bottom: 30px;
     margin-bottom: 50px;
+    z-index: 1;
   }
-
-li a{
+  
+  li a {
     color: #fff;
     text-decoration: none;
     padding-top: 30px;
-}
-
-
-
-
-  .menu_items li{
-    display: flex inline; /*Allows the menu items to flex and sets them in a ine horizonatlly*/
-    list-style: none; /*This removes the underlines on the list items*/
-    align-items: center; 
+  }
+  
+  /* Menu Items */
+  .menu_items li {
+    display: inline-flex; /* corrected from "flex inline" */
+    list-style: none;
+    align-items: center;
     font-family: "polymath", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -109,515 +101,376 @@ li a{
     padding-right: 40px;
     color: #fff;
   }
-
-  li a {
-    color: #fff;
-    text-decoration: none;
-    padding-top: 30px;
-}
-
-
-/* Stroke */
-.menu_items ul li a {
-  position: relative;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.menu_items ul li a::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%; /* Initially no stroke */
-  content: ''; /* No content, just for styling */
-  background: #aaa; /* Stroke color */
-  height: 1px; /* Stroke height */
-  transition: width 0.3s ease; /* Smooth transition on hover */
-}
-
-.menu_items ul li a:hover::after,
-.menu_items ul li a.active::after {
-  width: 100%; /* Stroke width becomes 100% on hover or when active */
-}
-
-/**Hamburger Menu*/
- .hamburger {
-    display: none; /* Hide the hamburger menu on desktop */
+  
+  /* Underline stroke effect */
+  .menu_items ul li a {
+    position: relative;
+    display: inline-flex;
+    gap: 20px;
+  }
+  
+  .menu_items ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    background: #aaa;
+    height: 1px;
+    transition: width 0.3s ease;
+  }
+  
+  .menu_items ul li a:hover::after,
+  .menu_items ul li a.active::after {
+    width: 100%;
+  }
+  
+  /* Hamburger Menu (hidden on desktop) */
+  .hamburger {
+    display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
     width: 30px;
     height: 25px;
     margin-top: 30px;
-}
-
-.hamburger .bar {
-  width: 100%;
-  height: 4px;
-  background-color: #fff; /* Ensure the bars are white */
-  border-radius: 4px; /* Optional: Add rounded corners to the bars */
-}
-
-
-.menu_items.active {
-    display: block; /* Show the menu when the hamburger is clicked */
-}
-
-@media screen and (max-width: 776px) {
-    .menu_items {
-        display: none; /* Hide the menu by default on small screens */
-        position: absolute;
-        top: 60px; /* Adjust based on your header size */
-        right: 50px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        width: 200px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
-        z-index: 9999; /* Ensure menu is above everything else, including the button */
-    }
-
-    .menu_items ul {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 40px;
-    }
-
-    .hamburger {
-        display: flex; /* Show the hamburger menu on small screens */
-    }
-
-    /* Add glow effect to the button by default on mobile version */
-    .menu_items .contact_btn {
-        box-shadow: 0 0 10px 3px rgba(255, 104, 46, 0.8); /* Glow effect by default */
-        background-color: #F16A2E;
-        z-index: 10000; /* Ensure the button stays on top of the mobile menu */
-    }
-    
-    .logo{
-      max-width:30px;
-      
-    }
-    
-}
-
-@media screen and (max-width: 776px) and (orientation: landscape) {
-  .menu_items {
-      display: none; /* Hide the menu by default on small screens */
-      position: absolute;
-      top: 60px; /* Adjust based on your header size */
-      right: 50px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      width: 200px;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
-      z-index: 9999; /* Ensure menu is above everything else, including the button */
-  }
-
-  .menu_items ul {
-      flex-direction: column;
-      align-items: center;
-      margin-left: 40px;
-  }
-
-  .hamburger {
-      display: flex; /* Show the hamburger menu on small screens */
-  }
-
-  /* Add glow effect to the button by default on mobile version */
-  .menu_items .contact_btn {
-      box-shadow: 0 0 10px 3px rgba(255, 104, 46, 0.8); /* Glow effect by default */
-      background-color: #F16A2E;
-      z-index: 10000; /* Ensure the button stays on top of the mobile menu */
   }
   
-  .logo{
-    max-width:30px;
-    
+  .hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
   }
   
-}
- 
-
-   button{
+  /* Show active mobile menu */
+  .menu_items.active {
+    display: block;
+  }
+  
+  /* ==========================================================================
+     Buttons
+     ========================================================================== */
+  
+  button {
     display: flex;
     align-self: center;
     text-decoration: none;
   }
-
+  
   .contact_btn {
     padding: 15px 40px;
     margin-top: 30px;
+    margin-left: 15px;
     border: none;
     outline: none;
-    color: #ffffff;
+    color: #fff;
     cursor: pointer;
     position: relative;
     z-index: 0;
     border-radius: 50px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01));
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.01));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     font-family: "polymath", sans-serif;
     font-weight: 400;
     font-style: normal;
-    box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
-    margin-left: 15px;
-}
-
-
-.contact_btn:hover {
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .contact_btn:hover {
     color: #fff;
-}
-
-  .contact_btn::after{
+  }
+  
+  /* Pseudo-elements for glow effect */
+  .contact_btn::after {
     content: "";
-    z-index: -1;
     position: absolute;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    background-color: Transparent;
-    background-repeat:no-repeat;
+    background-color: transparent;
+    background-repeat: no-repeat;
     left: 0;
     top: 0;
     border-radius: 60px;
-    opacity: 0.3; /* Slight glow visible by default */
-
+    opacity: 0.3;
   }
-
-  /*Glow Affect*/
-  .contact_btn::before{
+  
+  .contact_btn::before {
     content: "";
-    background: linear-gradient(
-        45deg,
-        #F16A2E, #F4985A, #F16A2E,
-        #F4985A, #F16A2E
-    );
     position: absolute;
     top: -2px;
     left: -2px;
-    background-size: 600%;
-    z-index: -1;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
+    background: linear-gradient(45deg, #F16A2E, #F4985A, #F16A2E, #F4985A, #F16A2E);
+    background-size: 600%;
     filter: blur(8px);
-    animation: glowing 20s linear infinite;
-    transition: opacity .3s ease-in-out;
     border-radius: 60px;
+    z-index: -1;
     opacity: 0;
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
   }
-
+  
   @keyframes glowing {
-    0%{background-position: 0 0;}
-    50%{background-position: 400% 0;}
-    100%{background-position:  0;}
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0;
+    }
   }
-
-  /*Hover*/
-  .contact_btn:hover::before{
+  
+  .contact_btn:hover::before {
     opacity: 1;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7); /* Glow effect around the border */
-}
-
-
-
-
-/*Hero Section*/
-
-/* Adjust the #hero section */
-#hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Ensure content stacks vertically */
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 40vh; /* Reduce height from 120vh to 90vh */
-  position: relative;
-  overflow: visible;
-  z-index: 1;
-  padding-bottom: 50px; /* Reduce bottom padding */
-}
-
-
-/* Ensuring Hero Content is Centered with Enough Space */
-.hero_content {
-  text-align: center;
-  z-index: 2;
-  padding-top: 20px; /* Adjust padding to prevent overlap */
-  padding-bottom: 20px; /* Adjust space below text */
-}
-
-/* Hero Button Adjustments */
-.hero_content button {
-  display: inline-block;
-  margin-top: 20px; /* Adds a buffer space to prevent overlap */
-  padding: 15px 40px; /* Maintain a comfortable button size */
-}
-
-.hero_content h2 {
-  font-size: 6.8535rem;
-  font-family: "polymath", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 120px;
-}
-
-.hero_content h1 {
-  font-size: 1rem;
-  font-family: "polymath", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 120px;
-}
-
-
-
-/* Media Query for Tablets */
-@media screen and (max-width: 1169px) {
-  #hero {
-    padding-top: 0px; /* Adjust padding for smaller screens */
+    box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7);
   }
-
-  .hero_content h2 {
-    font-size: 4.5rem;  /* Reduce font size on medium screens */
-    line-height: 90px; /* Adjust line height accordingly */
+  
+  /* ==========================================================================
+     Mobile / Responsive Styles
+     ========================================================================== */
+  
+  @media screen and (max-width: 776px) {
+    .menu_items {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 50px;
+      width: 200px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+      z-index: 9999;
+    }
+    .menu_items ul {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 40px;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .menu_items .contact_btn {
+      box-shadow: 0 0 10px 3px rgba(255,104,46,0.8);
+      background-color: #F16A2E;
+      z-index: 10000;
+    }
+    .logo {
+      margin-top: 30px;
+      max-width: 30px;
+    }
   }
-
-  .hero_content h1 {
-    font-size: 1.2rem; /* Increase font size slightly for small screens */
-    line-height: 100px;
-  }
-
-  .hero_content button {
-    font-size: 0.9rem; /* Slightly smaller button text */
-  }
-
+  
+  /* ==========================================================================
+     Hero Section
+     ========================================================================== */
+  
+  /* Base hero style */
   #hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Ensure content stacks vertically */
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 10vh; /* Reduce height from 120vh to 90vh */
+    flex-direction: column;
+    padding: 150px 50px 50px;
+    height: 60vh;
     position: relative;
     overflow: visible;
     z-index: 1;
   }
   
-
-  
-}
-
-/* Landscape Media Query for Tablets */
-@media screen and (max-width: 1169px) and (orientation: landscape) {
-  .hero_content h2 {
-    font-size: 4.5rem; /* Slightly larger font size for landscape orientation */
-    line-height: 90px; /* Adjust line height for landscape */
-  }
-
-  .hero_content h1 {
-    font-size: 1.3rem; /* Increase font size in landscape */
-    line-height: 110px;
-  }
-
-  .hero_content button {
-    font-size: 1rem; /* Adjust button size for landscape mode */
-  }
-  #hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Ensure content stacks vertically */
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 70vh; /* Reduce height from 120vh to 90vh */
-    position: relative;
-    overflow: visible;
-    z-index: 1;
-    padding-bottom: 50px; /* Reduce bottom padding */
-    margin-bottom: 50px;
-    padding-top: 50px;
+  /* Hero Content */
+  .hero_content {
+    text-align: center;
+    z-index: 2;
+    padding: 20px 0;
   }
   
-}
-
-/* Media Query for Small Devices */
-@media screen and (max-width: 932px) {
   .hero_content h2 {
-    font-size: 4rem;  /* Make heading smaller */
-    line-height: 80px;
-  }
-
-  .hero_content h1 {
-    font-size: 1.1rem; /* Adjust h1 font size for small devices */
-    line-height: 35px;
-  }
-
-  .hero_content button {
-    font-size: 0.9rem; /* Smaller button text for small devices */
-    padding: 10px 20px; /* Adjust button padding for small screens */
-    margin-bottom: 20px;
-
-  }
-  #hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Ensure content stacks vertically */
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 60vh; /* Reduce height from 120vh to 90vh */
-    position: relative;
-    overflow: visible;
-    z-index: 1;
-    padding-bottom: 50px; /* Reduce bottom padding */
-    margin-bottom: 50px;
-    margin-top: 70px;
+    font-size: 6.8535rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 120px;
   }
   
-
-}
-
-/* Landscape Media Query for Small Devices */
-@media screen and (max-width: 932px) and (orientation: landscape) {
-  .hero_content h2 {
-    font-size: 4.2rem; /* Increase font size slightly for landscape mode */
-    line-height: 75px;
-    padding-top: 50px;
-  }
-
   .hero_content h1 {
-    font-size: 1.2rem; /* Increase font size slightly for small landscape screens */
-    line-height: 30px;
-  }
-
-  .hero_content button {
-    font-size: 1rem; /* Adjust button size for landscape mode */
-    margin-bottom: 60px;
-  }
-
-  #hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Ensure content stacks vertically */
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 70vh; /* Reduce height from 120vh to 90vh */
-    position: relative;
-    overflow: visible;
-    z-index: 1;
-    padding-bottom: 50px; /* Reduce bottom padding */
-    margin-bottom: 50px;
-    padding-top: 50px;
+    font-size: 1rem;
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120px;
   }
   
-}
-
-/* Media Query for Extra Small Devices (Mobile Phones) */
-@media screen and (max-width: 740px) {
-  .hero_content h2 {
-    font-size: 3rem; /* Smaller font size for mobile screens */
-    line-height: 60px;
-    padding-bottom: 10px;
-  }
-
-  .hero_content h1 {
-    font-size: 1rem; /* Adjust for mobile */
-    line-height: 25px;
-  }
-
   .hero_content button {
-    font-size: 0.8rem; /* Make button text smaller */
-    padding: 8px 16px; /* Adjust button padding for small mobile screens */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
   }
-}
-
-/* Landscape Media Query for Extra Small Devices */
-@media screen and (max-width: 740px) and (orientation: landscape) {
-  .hero_content h2 {
-    font-size: 3.2rem; /* Adjust heading size for small landscape screens */
-    line-height: 60px;
-  }
-
-  .hero_content h1 {
-    font-size: 1.1rem; /* Adjust font size for mobile landscape */
-    line-height: 30px;
-  }
-
-  .hero_content button {
-    font-size: 0.9rem; /* Increase button font size slightly */
-    padding: 10px 18px; /* Adjust padding for landscape mode */
-    margin-bottom: 150px;
-  }
-  #hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Ensure content stacks vertically */
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 90vh; /* Reduce height from 120vh to 90vh */
+  
+  /* Hero Image */
+  #hero.image {
+    display: block;
+    width: 100%;
+    height: 0;
+    background-color: transparent;
     position: relative;
-    overflow: visible;
-    z-index: 1;
-    padding-bottom: 20px; /* Reduce bottom padding */
-    margin-bottom: 50px;
-    max-width: 100%;
-    margin-top: 60px;
+    z-index: 2;
   }
-}
-
-/* Hero Section */
-#hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 60vh; /* Full viewport height to ensure enough space */
-  position: relative; /* Ensures that absolute positioning for stars works */
-  overflow: visible; /* Allow stars to overflow beyond this section */
-  z-index: 1; /* Set a z-index for the whole section */
-  padding-top: 150px;
-}
-
-/* Hero image section */
-#hero.image {
-  display: block;
-  width: 100%; /* Full page width */
-  background-color: transparent; /* Transparent background */
-  position: relative; /* Keep stars inside this container */
-  z-index: 2; /* The image's z-index is higher than stars */
-  height: 0px;
-}
-
-/* Hero Image */
-.hero_img {
-  max-width: 100%;
-  max-height: 70%;
-  width: auto;
-  display: block;
-  margin: 0 auto; /* Keep the image centered */
-  padding-top: 0; /* Remove padding-top */
-  margin-top: 0; /* Ensure there's no top margin */
-  object-fit: cover; /* Make sure the image fills its container properly */
-  z-index: 3; /* Keeps the image above stars */
-  margin-top: 150px;
-}
-
-@media screen and (max-width: 740px) and (orientation: landscape) {
+  
   .hero_img {
-    margin-top: 25px;
+    display: block;
+    margin: 150px auto 0;
+    max-width: 100%;
+    max-height: 70%;
+    width: auto;
+    object-fit: cover;
+    z-index: 3;
+    padding-top: 0;
   }
+  
+  @media screen and (max-width: 740px) and (orientation: landscape) {
+    .hero_img {
+      margin-top: 25px;
+    }
+  }
+  
+  /* ==========================================================================
+     Hero Responsive Adjustments
+     ========================================================================== */
+  
+  /* Tablets */
+  @media screen and (max-width: 1169px) {
+    #hero {
+      height: 70vh;
+      padding-top: 0;
+    }
+    .hero_content h2 {
+      font-size: 4.5rem;
+      line-height: 90px;
+    }
+    .hero_content h1 {
+      font-size: 1.2rem;
+      line-height: 100px;
+    }
+    .hero_content button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Tablets Landscape */
+  @media screen and (max-width: 1169px) and (orientation: landscape) {
+    #hero {
+      height: 70vh;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+    .hero_content h2 {
+      font-size: 4.5rem;
+      line-height: 90px;
+    }
+    .hero_content h1 {
+      font-size: 1.3rem;
+      line-height: 110px;
+    }
+    .hero_content button {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small Devices */
+  @media screen and (max-width: 932px) {
+    #hero {
+      height: 60vh;
+      margin-top: 70px;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+    }
+    .hero_content h2 {
+      font-size: 4rem;
+      line-height: 80px;
+    }
+    .hero_content h1 {
+      font-size: 1.1rem;
+      line-height: 35px;
+    }
+    .hero_content button {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Small Devices Landscape */
+  @media screen and (max-width: 932px) and (orientation: landscape) {
+    #hero {
+      height: 70vh;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .hero_content h2 {
+      font-size: 4.2rem;
+      line-height: 75px;
+      padding-top: 50px;
+    }
+    .hero_content h1 {
+      font-size: 1.2rem;
+      line-height: 30px;
+    }
+    .hero_content button {
+      font-size: 1rem;
+      margin-bottom: 60px;
+    }
+  }
+  
+  /* Extra Small Devices */
+  @media screen and (max-width: 740px) {
+    .hero_content h2 {
+      font-size: 3rem;
+      line-height: 60px;
+      padding-bottom: 10px;
+    }
+    .hero_content h1 {
+      font-size: 1rem;
+      line-height: 25px;
+    }
+    .hero_content button {
+      font-size: 0.8rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  /* Extra Small Devices Landscape */
+  @media screen and (max-width: 740px) and (orientation: landscape) {
+    #hero {
+      height: 90vh;
+      margin-top: 60px;
+      padding-bottom: 20px;
+      margin-bottom: 50px;
+      max-width: 100%;
+    }
+    .hero_content h2 {
+      font-size: 3.2rem;
+      line-height: 60px;
+    }
+    .hero_content h1 {
+      font-size: 1.1rem;
+      line-height: 30px;
+    }
+    .hero_content button {
+      font-size: 0.9rem;
+      padding: 10px 18px;
+      margin-bottom: 150px;
+    }
   }
 
 
